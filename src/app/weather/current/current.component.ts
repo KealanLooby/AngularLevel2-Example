@@ -3,6 +3,7 @@ import {LocationStoreService} from "../../store/location.store.service";
 import {WeatherService} from "../../services/weather.service";
 import {Observable, switchMap} from "rxjs";
 import {CurrentWeather} from "../../models/current-weather";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-current',
@@ -16,6 +17,7 @@ export class CurrentComponent implements OnInit {
   weatherData$ : Observable<CurrentWeather>;
 
   constructor(public weatherService: WeatherService,
+              private router: Router,
               private locationStoreService: LocationStoreService ) {
     this.weatherData$ = new Observable<CurrentWeather>();
   }
@@ -41,5 +43,8 @@ export class CurrentComponent implements OnInit {
     }
   }
 
+  navigateToForecast() {
+    this.router.navigate(['/forecast', this.cityTitle]);
+  }
 
 }

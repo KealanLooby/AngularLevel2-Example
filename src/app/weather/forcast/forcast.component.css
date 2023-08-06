@@ -1,0 +1,21 @@
+.w-conds-small-image {
+  width: 30px;  /* set the width */
+  height: 30px; /* set the height */
+}
+
+.card-container {
+  position: relative;
+}
+
+.card {
+  margin-top: 15px; /* This pushes the card down a bit */
+}
+
+.card-title {
+  position: absolute;
+  top: -10px; /* Adjust this to place the title where you want on the card's top border */
+  left: 50px; /* Adjust this to move the title left or right */
+  background-color: #fff; /* This matches the card's background color */
+  padding: 0 10px;
+  z-index: 1;
+}

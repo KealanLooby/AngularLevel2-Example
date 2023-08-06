@@ -1,0 +1,39 @@
+<div fxLayout="column" fxLayoutGap="20px">
+
+  <!-- Your Existing Card -->
+  <div *ngIf="forecastData$ | async as forcast">
+    <div class="card-container">
+      <span class="card-title">{{city | titlecase}}</span>
+      <div class="card my-card m-3 bg-light">
+        <div class="card-body">
+          <ng-container *ngFor="let item of forcast.list">
+            <div fxLayout="row" >
+              <div fxFlex>
+                {{ item.dt * 1000 | date:'EEEE' }}
+              </div>
+              <div fxFlex>
+                <p>High: {{ (item.temp.max - 273) | number:'1.1-1' }} °C</p>
+              </div>
+              <div fxFlex>
+                <p>Low: {{ (item.temp.min - 273) | number:'1.1-1' }} °C</p>
+              </div>
+              <div fxFlex>
+                <img *ngIf="item.weather[0].description?.includes('cloud')" src="assets/images/clouds.png" alt="Clouds" class="w-conds-small-image">
+                <img *ngIf="item.weather[0].description?.includes('rain')" src="assets/images/rain.png" alt="Clouds" class="w-conds-small-image">
+                <img *ngIf="item.weather[0].description?.includes('snow')" src="assets/images/snow.png" alt="Clouds"class="w-conds-small-image">
+                <img *ngIf="item.weather[0].description?.includes('sun')" src="assets/images/sun.png" alt="Clouds" class="w-conds-small-image">
+                <img *ngIf="item.weather[0].description?.includes('clear')" src="assets/images/sun.png" alt="Clouds"class="w-conds-small-image">
+              </div>
+
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <!-- Button with 30px top margin, inside the *ngIf so its not showing first -->
+    <div style="margin-top: 30px;" fxLayout="row" fxLayoutAlign="center center">
+      <button (click)="goBack()">Back</button>
+    </div>
+  </div>
+
+</div>

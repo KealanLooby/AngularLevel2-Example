@@ -4,7 +4,8 @@
     <span class="card-title">{{cityTitle | titlecase}}</span>
     <button class="close-btn" (click)="removeLocation()">X</button>
 
-    <div class="card my-card m-3 bg-light">
+    <div class="card my-card m-3 bg-light" (click)="navigateToForecast()">
+
       <div class="card-body">
 
         <div fxFlex fxLayout="column" fxLayoutAlign="start left" style="overflow-y: auto; padding: 20px;">

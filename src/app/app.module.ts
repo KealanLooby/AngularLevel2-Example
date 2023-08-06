@@ -9,13 +9,15 @@ import { LocationComponent } from './weather/location/location.component';
 import { CurrentComponent } from './weather/current/current.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import { ForcastComponent } from './weather/forcast/forcast.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherComponent,
     LocationComponent,
-    CurrentComponent
+    CurrentComponent,
+    ForcastComponent
   ],
   imports: [
     FormsModule,
