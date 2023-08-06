@@ -1,0 +1,43 @@
+<div class="card my-card m-3 bg-light">
+  <div class="card-body">
+
+    <div fxFlex fxLayout="row" fxLayoutAlign="center start" style="overflow-y: auto; padding: 20px;">
+
+      <div fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="center center">
+        <!-- Row for current conditions -->
+        <div fxFlex>
+          <h3>Enter a City : </h3>
+        </div>
+
+        <div fxFlex>
+          <div class="location-input-panel">
+
+            <form [formGroup]="locationForm" class="input-container">
+
+              <input formControlName="location" size="10" type="text" id="zipcode" class="input-button-width">
+              <button (click)="submitZipcode()" class="input-button-width">Submit</button>
+
+              <!-- Error message with reserved space -->
+              <div style="height: 20px; color: red;visibility: hidden;">
+                <div *ngIf="locationForm.get('location')?.invalid && locationForm.get('location')?.touched" class="error-message" style="visibility: visible;">
+                  Location is required!
+                </div>
+                <div *ngIf="formError && locationForm.get('location')?.valid && locationForm.get('location')?.touched" class="error-message" style="visibility: visible;">
+                   Please check your inputs. City already entered.
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+

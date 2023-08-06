@@ -1,0 +1,7 @@
+<app-location></app-location>
+
+<div *ngFor="let city of locationStoreService.currentState$ | async">
+  <app-current [cityTitle]="city"></app-current>
+</div>
+
+

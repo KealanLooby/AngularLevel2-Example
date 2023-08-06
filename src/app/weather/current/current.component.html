@@ -1,0 +1,49 @@
+<div *ngIf="weatherData$ | async as weather">
+
+  <div class="card-container">
+    <span class="card-title">{{cityTitle | titlecase}}</span>
+    <button class="close-btn" (click)="removeLocation()">X</button>
+
+    <div class="card my-card m-3 bg-light">
+      <div class="card-body">
+
+        <div fxFlex fxLayout="column" fxLayoutAlign="start left" style="overflow-y: auto; padding: 20px;">
+
+          <div fxFlex>
+            <p>Current conditions: {{weather.weather[0].description | titlecase }}</p>
+          </div>
+          <!-- Row for temperature -->
+          <div fxFlex>
+            <ng-container *ngIf="weather?.main">
+              <p>Max temperature: {{ (weather.main.temp - 273) | number:'1.1-1' }} °C</p>
+            </ng-container>
+          </div>
+          <!-- Row for max and min temperature -->
+          <div fxFlex>
+            <ng-container *ngIf="weather?.main">
+              <p>Max temperature: {{ (weather.main.temp_max - 273) | number:'1.1-1' }} °C</p>
+            </ng-container>
+          </div>
+          <div fxFlex>
+            <ng-container *ngIf="weather?.main">
+              <p>Min temperature: {{ (weather.main.temp_min - 273) | number:'1.1-1' }} °C</p>
+            </ng-container>
+          </div>
+        </div>
+
+        <div fxFlex fxLayout="column" fxLayoutAlign="center center">
+
+          <div fxFlex>
+            <img *ngIf="weather.weather[0].description?.includes('cloud')" src="assets/images/clouds.png" alt="Clouds" class="w-conds-image">
+            <img *ngIf="weather.weather[0].description?.includes('snow')" src="assets/images/snow.png" alt="Clouds"class="w-conds-image">
+            <img *ngIf="weather.weather[0].description?.includes('sun')" src="assets/images/sun.png" alt="Clouds" class="w-conds-image">
+            <img *ngIf="weather.weather[0].description?.includes('clear')" src="assets/images/sun.png" alt="Clouds"class="w-conds-image">
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,38 @@
+
+.card-container {
+  position: relative;
+}
+
+.card {
+  margin-top: 15px; /* This pushes the card down a bit */
+}
+
+.card-title {
+  position: absolute;
+  top: -10px; /* Adjust this to place the title where you want on the card's top border */
+  left: 50px; /* Adjust this to move the title left or right */
+  background-color: #fff; /* This matches the card's background color */
+  padding: 0 10px;
+  z-index: 1;
+}
+
+.my-card-cw {
+  height: 250px;
+  padding-bottom: 100px;
+}
+
+.w-conds-image {
+  width: 150px;  /* set the width */
+  height: 150px; /* set the height */
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1; /* Ensure it stays on top */
+}
