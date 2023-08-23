@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LocationStoreService} from "../../store/location.store.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
@@ -7,7 +7,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   templateUrl: './location.component.html',
   styleUrls: ['./location.component.css']
 })
-export class LocationComponent {
+export class LocationComponent implements OnInit {
 
   // add name, to store
   location: string = '';

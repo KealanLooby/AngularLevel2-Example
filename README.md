@@ -1,3 +1,19 @@
+# Steps
+
+# Development
+  - Give Requirements = https://bit.ly/at-certification
+  - Build up in steps, component = requirement
+  - Use the API given = eg = https://openweathermap.org/api
+  - Generate models from = https://app.quicktype.io/
+  - Style - used bootstrap style , container + cards
+
+# Deployment
+
+  - Use github repo - 
+  - Serve on - https://stackblitz.com
+  - https://developer.stackblitz.com/guides/user-guide/importing-projects#import-from-github
+
+
 # Project2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.

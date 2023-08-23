@@ -19,11 +19,13 @@
 
               <!-- Error message with reserved space -->
               <div style="height: 20px; color: red;visibility: hidden;">
-                <div *ngIf="locationForm.get('location')?.invalid && locationForm.get('location')?.touched" class="error-message" style="visibility: visible;">
+                <div *ngIf="locationForm.get('location')?.invalid && locationForm.get('location')?.touched"
+                     class="error-message" style="visibility: visible;">
                   Location is required!
                 </div>
-                <div *ngIf="formError && locationForm.get('location')?.valid && locationForm.get('location')?.touched" class="error-message" style="visibility: visible;">
-                   Please check your inputs. City already entered.
+                <div *ngIf="formError && locationForm.get('location')?.valid && locationForm.get('location')?.touched"
+                     class="error-message" style="visibility: visible;">
+                  Please check your inputs. City already entered.
                 </div>
               </div>
 
