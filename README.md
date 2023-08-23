@@ -12,6 +12,9 @@
   - Use github repo - 
   - Serve on - https://stackblitz.com
   - https://developer.stackblitz.com/guides/user-guide/importing-projects#import-from-github
+  - Copy the github repo to stackblitz
+  - https://stackblitz.com/github/  +   KealanLooby/AngularLevel2-Example
+  - https://stackblitz.com/github/KealanLooby/AngularLevel2-Example
 
 
 # Project2
